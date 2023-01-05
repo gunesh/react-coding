@@ -7,7 +7,7 @@ export default function App() {
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen :)</p>
-      {console.log(split('ls -al / "dsfsfsf fgfddg gfd fdgfdg "'))}
+      {console.log(split('ls -al / "dsfsfsf fgfddg gfd fdgfdg"'))}
     </div>
   );
 }
