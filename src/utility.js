@@ -8,3 +8,15 @@ export const stringWithoutQuotes = () => {
   }
   console.log('string without quotes: ' + finalString);
 };
+
+export const countGivenChar = (str = '', ch = ' ') => {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    const el = str[i];
+    if (el !== ch) {
+      continue;
+    }
+    count++;
+  }
+  return count;
+};
