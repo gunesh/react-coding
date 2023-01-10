@@ -1,15 +1,27 @@
-import React, { Component, Fragment } from "react";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from 'react';
 
+const Autocompletes = () => {
+  const [activeSuggestion, setActiveSuggestion] = React.state(0);
+  const [filteredSuggestions, setFilteredSuggestions] = React.state([]);
+  const [showSuggestions, setShowSuggestions] = React.state(false);
+  const [userInput, setUserInput] = React.state('');
+
+  onChange = (e) => {
+    const { suggestions } = this.props;
+    const userInput = e.currentTarget.value;
+
+    // Filter our suggestions that don't contain the user's input
+    const filteredSuggestionsRes = suggestions.filter(
+      (suggestion) =>
+        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+    );
+    setActiveSuggestion(0);
+    setFilteredSuggestions(filteredSuggestionsRes);
+    setShowSuggestions(true);
+    setUserInput(e.currentTarget.value);
+  };
+};
 class Autocomplete extends Component {
-  static propTypes = {
-    suggestions: PropTypes.instanceOf(Array)
-  };
-
-  static defaultProps = {
-    suggestions: []
-  };
-
   constructor(props) {
     super(props);
 
@@ -21,17 +33,17 @@ class Autocomplete extends Component {
       // Whether or not the suggestion list is shown
       showSuggestions: false,
       // What the user has entered
-      userInput: ""
+      userInput: '',
     };
   }
 
-  onChange = e => {
+  onChange = (e) => {
     const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
 
     // Filter our suggestions that don't contain the user's input
     const filteredSuggestions = suggestions.filter(
-      suggestion =>
+      (suggestion) =>
         suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
 
@@ -39,20 +51,20 @@ class Autocomplete extends Component {
       activeSuggestion: 0,
       filteredSuggestions,
       showSuggestions: true,
-      userInput: e.currentTarget.value
+      userInput: e.currentTarget.value,
     });
   };
 
-  onClick = e => {
+  onClick = (e) => {
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
-      userInput: e.currentTarget.innerText
+      userInput: e.currentTarget.innerText,
     });
   };
 
-  onKeyDown = e => {
+  onKeyDown = (e) => {
     const { activeSuggestion, filteredSuggestions } = this.state;
 
     // User pressed the enter key
@@ -60,7 +72,7 @@ class Autocomplete extends Component {
       this.setState({
         activeSuggestion: 0,
         showSuggestions: false,
-        userInput: filteredSuggestions[activeSuggestion]
+        userInput: filteredSuggestions[activeSuggestion],
       });
     }
     // User pressed the up arrow
@@ -90,8 +102,8 @@ class Autocomplete extends Component {
         activeSuggestion,
         filteredSuggestions,
         showSuggestions,
-        userInput
-      }
+        userInput,
+      },
     } = this;
 
     let suggestionsListComponent;
@@ -105,7 +117,7 @@ class Autocomplete extends Component {
 
               // Flag the active suggestion with a class
               if (index === activeSuggestion) {
-                className = "suggestion-active";
+                className = 'suggestion-active';
               }
 
               return (
