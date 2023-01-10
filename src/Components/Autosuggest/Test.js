@@ -11,8 +11,10 @@ const Autocomplete = ({ options }) => {
 
     // Filter our suggestions that don't contain the user's input
     const filteredSuggestionsRes = options.filter(
-      (option) => option.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+      (option) =>
+        option.label.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
+    console.log(filteredSuggestionsRes);
     setActiveSuggestion(0);
     setFilteredSuggestions(filteredSuggestionsRes);
     setShowSuggestions(true);
@@ -20,18 +22,19 @@ const Autocomplete = ({ options }) => {
   };
 
   const onClick = (e) => {
-    setActiveSuggestion(0);
-    setFilteredSuggestions([]);
-    setShowSuggestions(false);
-    setUserInput(e.currentTarget.innerText);
+    // setActiveSuggestion(0);
+    // setFilteredSuggestions([]);
+    // setShowSuggestions(false);
+    // setUserInput(e.currentTarget.innerText);
   };
 
   const onKeyDown = (e) => {
+    console.log('activeSuggestion', activeSuggestion);
     // User pressed the enter key
     if (e.keyCode === 13) {
       setActiveSuggestion(0);
       setShowSuggestions(false);
-      setUserInput(filteredSuggestions[activeSuggestion]);
+      setUserInput(filteredSuggestions[activeSuggestion].label);
     }
     // User pressed the up arrow
     else if (e.keyCode === 38) {
@@ -70,8 +73,12 @@ const Autocomplete = ({ options }) => {
                 }
 
                 return (
-                  <li className={className} key={option} onClick={onClick}>
-                    {option}
+                  <li
+                    className={className}
+                    key={option.label}
+                    onClick={onClick}
+                  >
+                    {option.label}
                   </li>
                 );
               })}
