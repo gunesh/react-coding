@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const Autocomplete = ({ suggestions }) => {
+const Autocomplete = ({ options }) => {
   const [activeSuggestion, setActiveSuggestion] = React.useState(0);
   const [filteredSuggestions, setFilteredSuggestions] = React.useState([]);
   const [showSuggestions, setShowSuggestions] = React.useState(false);
@@ -10,9 +10,8 @@ const Autocomplete = ({ suggestions }) => {
     const userInput = e.currentTarget.value;
 
     // Filter our suggestions that don't contain the user's input
-    const filteredSuggestionsRes = suggestions.filter(
-      (suggestion) =>
-        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+    const filteredSuggestionsRes = options.filter(
+      (option) => option.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
     setActiveSuggestion(0);
     setFilteredSuggestions(filteredSuggestionsRes);
@@ -62,7 +61,7 @@ const Autocomplete = ({ suggestions }) => {
         <>
           {filteredSuggestions.length ? (
             <ul class="suggestions">
-              {filteredSuggestions.map((suggestion, index) => {
+              {filteredSuggestions.map((option, index) => {
                 let className;
 
                 // Flag the active suggestion with a class
@@ -71,8 +70,8 @@ const Autocomplete = ({ suggestions }) => {
                 }
 
                 return (
-                  <li className={className} key={suggestion} onClick={onClick}>
-                    {suggestion}
+                  <li className={className} key={option} onClick={onClick}>
+                    {option}
                   </li>
                 );
               })}

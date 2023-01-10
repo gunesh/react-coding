@@ -12,7 +12,7 @@ export default function App() {
       {/*   {console.log(split('ls -al / "dsfsfsf fgfddgg"'))} */}
       {/* <Input placeholder="Enter Value" /> */}
       <Autocomplete
-        suggestions={[
+        options={[
           'Alligator',
           'Bask',
           'Crocodilian',
