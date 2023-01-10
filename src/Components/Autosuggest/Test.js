@@ -1,13 +1,12 @@
 import React, { Component, Fragment } from 'react';
 
-const Autocomplete = ({suggestions}) => {
+const Autocomplete = ({ suggestions }) => {
   const [activeSuggestion, setActiveSuggestion] = React.useState(0);
   const [filteredSuggestions, setFilteredSuggestions] = React.useState([]);
   const [showSuggestions, setShowSuggestions] = React.useState(false);
   const [userInput, setUserInput] = React.useState('');
 
   const onChange = (e) => {
-    
     const userInput = e.currentTarget.value;
 
     // Filter our suggestions that don't contain the user's input
