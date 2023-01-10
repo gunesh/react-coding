@@ -22,10 +22,10 @@ const Autocomplete = ({ options }) => {
   };
 
   const onClick = (e) => {
-    // setActiveSuggestion(0);
-    // setFilteredSuggestions([]);
-    // setShowSuggestions(false);
-    // setUserInput(e.currentTarget.innerText);
+    setActiveSuggestion(0);
+    setFilteredSuggestions([]);
+    setShowSuggestions(false);
+    setUserInput(e.currentTarget.innerText);
   };
 
   const onKeyDown = (e) => {
