@@ -7,9 +7,9 @@ import Autocomplete from './Components/Autosuggest/Test';
 export default function App() {
   return (
     <div>
-      {/* <h1>Hello StackBlitz!</h1>
+      {/* <h1>Hello StackBlitz!</h1> */}
       <p>Start editing to see some magic happen :)</p>
-      {console.log(split('ls -al / "dsfsfsf fgfddgg"'))} */}
+      {/*   {console.log(split('ls -al / "dsfsfsf fgfddgg"'))} */}
       {/* <Input placeholder="Enter Value" /> */}
       <Autocomplete
         suggestions={[
