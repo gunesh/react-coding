@@ -95,7 +95,7 @@ const Autocomplete = ({ options }) => {
         </>
       )}
 
-      <div>
+      {/* <div>
         <CSSTransition
           nodeRef={nodeRef}
           in={inProp}
@@ -107,7 +107,7 @@ const Autocomplete = ({ options }) => {
         <button type="button" onClick={() => setInProp(true)}>
           Click to Enter
         </button>
-      </div>
+      </div> */}
     </Fragment>
   );
 };
