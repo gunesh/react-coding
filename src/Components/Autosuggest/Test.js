@@ -1,10 +1,14 @@
 import React, { Fragment } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 const Autocomplete = ({ options }) => {
   const [activeSuggestion, setActiveSuggestion] = React.useState(0);
   const [filteredSuggestions, setFilteredSuggestions] = React.useState([]);
   const [showSuggestions, setShowSuggestions] = React.useState(false);
   const [userInput, setUserInput] = React.useState('');
+
+  const [inProp, setInProp] = React.useState(false);
+  const nodeRef = React.useRef(null);
 
   const onChange = (e) => {
     const userInput = e.currentTarget.value;
@@ -90,6 +94,20 @@ const Autocomplete = ({ options }) => {
           )}
         </>
       )}
+
+
+<div>
+      <CSSTransition nodeRef={nodeRef} in={inProp} timeout={200} classNames="my-node">
+        <div ref={nodeRef}>
+          {"I'll receive my-node-* classes"}
+        </div>
+      </CSSTransition>
+      <button type="button" onClick={() => setInProp(true)}>
+        Click to Enter
+      </button>
+    </div>
+
+
     </Fragment>
   );
 };
