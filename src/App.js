@@ -4,7 +4,7 @@ import { split } from 'shlex';
 import Input from './Components/Autosuggest/Input';
 import Autocomplete from './Components/Autosuggest/Test';
 import Transition from './Components/CSSTransition';
-import {options} from './Data/data'
+import { options } from './Data/data';
 
 export default function App() {
   return (
