@@ -15,7 +15,7 @@ function Transition() {
         </Button>
       )}
       <CSSTransition
-        in={false}
+        in={showMessage}
         nodeRef={nodeRef}
         timeout={300}
         classNames="alert"
