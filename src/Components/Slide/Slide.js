@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 export default class MultipleItems extends Component {
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 3,
