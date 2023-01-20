@@ -11,7 +11,7 @@ export default class MultipleItems extends Component {
       slidesToScroll: 3,
     };
     return (
-      <div>
+      <div style={{width:"20px"}}>
         <h2> Multiple items </h2>
         <Slider {...settings}>
           <div>
