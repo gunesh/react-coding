@@ -6,6 +6,8 @@ import Autocomplete from './Components/Autosuggest/Test';
 import Transition from './Components/CSSTransition';
 import { options } from './Data/data';
 
+import MultipleItems from './Components/Slide/Slide';
+
 export default function App() {
   return (
     <div>
@@ -14,7 +16,7 @@ export default function App() {
       {/*   {console.log(split('ls -al / "dsfsfsf fgfddgg"'))} */}
       {/* <Input placeholder="Enter Value" /> */}
       <Autocomplete options={options} />
-
+      <MultipleItems />
       <Transition />
     </div>
   );
