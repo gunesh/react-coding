@@ -2,10 +2,28 @@ import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
+
+const responsiveSettings = [
+  {
+      breakpoint: 800,
+      settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+      }
+  },
+  {
+      breakpoint: 500,
+      settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+      }
+  }
+];
+
 const Example = () => {
   return (
     <div>
-      <Slide slidesToScroll={4} slidesToShow={4} indicators={false}>
+      <Slide slidesToScroll={4} slidesToShow={4} indicators={false} responsive={responsiveSettings}>
         <div
           style={{
             textAlign: 'center',
