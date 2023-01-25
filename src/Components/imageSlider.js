@@ -5,7 +5,7 @@ import 'react-slideshow-image/dist/styles.css';
 const Example = () => {
   return (
     <div>
-      <Slide slidesToScroll={2} slidesToShow={4} indicators={false}>
+      <Slide slidesToScroll={4} slidesToShow={4} indicators={false}>
         <div
           style={{
             textAlign: 'center',
