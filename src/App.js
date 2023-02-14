@@ -16,9 +16,9 @@ export default function App() {
       <Example />
       {/*   {console.log(split('ls -al / "dsfsfsf fgfddgg"'))} */}
       {/* <Input placeholder="Enter Value" /> */}
-      {/* <Autocomplete options={options} />
+      <Autocomplete options={options} />
       <MultipleItems />
-      <Transition /> */}
+     {/*  <Transition /> */}
     </div>
   );
 }
