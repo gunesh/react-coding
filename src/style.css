@@ -17,3 +17,14 @@ p {
 .react-slideshow-wrapper.slide {
   height: 100px;
 }
+
+#scroller {
+  overflow: scroll;
+  height: 150px;
+  width: 250px;
+ 
+}
+
+#output {
+  padding: 1rem 0;
+}
