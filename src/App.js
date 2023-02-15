@@ -13,11 +13,11 @@ export default function App() {
     <div>
       {/* <h1>Hello StackBlitz!</h1> */}
       <p>Start editing to see some magic happen :)</p>
-      <Example />
+      {/* <Example /> */}
       {/*   {console.log(split('ls -al / "dsfsfsf fgfddgg"'))} */}
       {/* <Input placeholder="Enter Value" /> */}
-      <Autocomplete options={options} />
-      <MultipleItems />
+      {/* <Autocomplete options={options} /> */}
+      {/* <MultipleItems /> */}
      {/*  <Transition /> */}
     </div>
   );
