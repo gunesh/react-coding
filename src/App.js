@@ -7,12 +7,14 @@ import Transition from './Components/CSSTransition';
 import { options } from './Data/data';
 import Example from './Components/imageSlider';
 import MultipleItems from './Components/Slide/Slide';
+import ScrollTopExample from './Components/ScrollTopExample';
 
 export default function App() {
   return (
     <div>
       {/* <h1>Hello StackBlitz!</h1> */}
       <p>Start editing to see some magic happen :)</p>
+      <ScrollTopExample />
       {/* <Example /> */}
       {/*   {console.log(split('ls -al / "dsfsfsf fgfddgg"'))} */}
       {/* <Input placeholder="Enter Value" /> */}
