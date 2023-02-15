@@ -5,6 +5,7 @@ const ScrollTopExample = () => {
 
   useEffect(() => {
     console.log(dropdownRef);
+    dropdownRef.current.scrollTop = 50
   }, [dropdownRef]);
 
   return (
