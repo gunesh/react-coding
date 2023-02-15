@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ScrollTopExample = () => {
+  const dropdownRef = React.useRef(null);
+
+  useEffect(() => {
+    console.log(dropdownRef);
+  }, [dropdownRef]);
+
   return (
     <div>
       <div id="container">
-        <div id="scroller">
+        <div id="scroller" ref={dropdownRef}>
           <p>
             Far out in the uncharted backwaters of the unfashionable end of the
             western spiral arm of the Galaxy lies a small unregarded yellow sun.
